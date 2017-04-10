@@ -26,7 +26,35 @@ Postgres database seems to be created for you. If not `heroku addons:create hero
 
 Make migrations
 
-``` heroku run python manage.py migrate ```   ## NOT WORKING
+``` heroku run python LMNOPproject/manage.py migrate ```  
+
+OR
+
+```heroku run bash```
+
+then
+
+```
+cd LMNOPproject
+python manage.py migrate
+```
+
+### Create superuser
+
+``` heroku run python LMNOPproject/manage.py createsuperuser ```  
+
+
+
+```heroku run bash```
+
+then
+
+```
+cd LMNOPproject
+python manage.py createsuperuser
+```
+
+
 
 ### Collect static files
 
