@@ -14,6 +14,10 @@ import os
 
 import dj_database_url
 
+import sys
+sys.path.append('..')  ## maybe not needed? 
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,8 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'LMNOPsite.lmn'
+    'LMNOPproject.lmn',
 ]
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,7 +58,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'LMNOPsite.LMNOPsite.urls'
+ROOT_URLCONF = 'LMNOPproject.LMNOPsite.urls'
 
 TEMPLATES = [
     {
