@@ -1,18 +1,24 @@
-#LMNOP
-
-## Live Music Notes, Opinions, Photographs
+## LMNOP
 
 Assumes postgres installed and running.
 
-Create Procfile
+### Create Procfile
+
+Put command to run wsgi.py in it
+
+### Add dependencies 
 
 pip install whitenoise, gunicorn, dj-database-url, update requirements.txt
+
+(note updated psycopg2) 
+
+### renaming 
 
 Renamed the upper LMNOPsite directory to LMNOPproject to avoid ambiguity
 
 Replace various references to lmn with LMNOPproject.lmn   
 
-## Python version
+### Python version
 
 create runtime.txt file with python version in
 
@@ -26,11 +32,11 @@ Postgres database seems to be created for you. If not `heroku addons:create hero
 
 Make migrations
 
-``` heroku run python LMNOPproject/manage.py migrate ```  
+``` heroku run python LMNOPproject/manage.py migrate ```
 
 OR
 
-```heroku run bash```
+``` heroku run bash ```
 
 then
 
@@ -43,7 +49,7 @@ python manage.py migrate
 
 ``` heroku run python LMNOPproject/manage.py createsuperuser ```  
 
-
+OR 
 
 ```heroku run bash```
 
@@ -59,6 +65,8 @@ python manage.py createsuperuser
 ### Collect static files
 
 Add whitenoise, make edits to settings.py as described in heroku docs.
+
+https://devcenter.heroku.com/articles/django-app-configuration#migrating-an-existing-django-project
 
 Disabling collect static and deploying in the current configuration seems to work (??) Must read up more on collectstatic. Possibly whitenoise looks for static files in the same place as manage.py runserver (?)
 
@@ -81,5 +89,5 @@ App at 127.0.0.0:5000  (not :8000)
 
 ### TODO
 
-DEBUG = False
+Change DEBUG = False in settings.py
 Change secret key
