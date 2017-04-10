@@ -78,12 +78,8 @@ App at 127.0.0.0:5000  (not :8000)
 
 ```git push heroku master```
 
-### Postgres on Heroku
 
-TODO
+### TODO
 
-migrations
-
-### Create superuser
-
-TODO
+DEBUG = False
+Change secret key
