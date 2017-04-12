@@ -15,7 +15,7 @@ import os
 import dj_database_url
 
 import sys
-sys.path.append('..')  ## maybe not needed?
+sys.path.append('..')  ## This is needed to be able to run python manage.py
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

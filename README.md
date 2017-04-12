@@ -6,13 +6,13 @@ Assumes postgres installed and running.
 
 Put command to run wsgi.py in it
 
-### Add dependencies 
+### Add dependencies
 
 pip install whitenoise, gunicorn, dj-database-url, update requirements.txt
 
-(note updated psycopg2) 
+(note updated psycopg2)
 
-### renaming 
+### renaming
 
 Renamed the upper LMNOPsite directory to LMNOPproject to avoid ambiguity
 
@@ -49,7 +49,7 @@ python manage.py migrate
 
 ``` heroku run python LMNOPproject/manage.py createsuperuser ```  
 
-OR 
+OR
 
 ```heroku run bash```
 
@@ -60,7 +60,16 @@ cd LMNOPproject
 python manage.py createsuperuser
 ```
 
+### Running manage.py locally
 
+Add these lines to settings.py
+
+```
+
+import sys
+sys.path.append('..')  ## This is needed to be able to run python manage.py
+
+```
 
 ### Collect static files
 
@@ -81,6 +90,14 @@ Disabling collect static and deploying in the current configuration seems to wor
 ```heroku local web```
 
 App at 127.0.0.0:5000  (not :8000)
+
+(Windows users: this won't work because gunicorn doesn't work on Windows. Run your app as before,
+
+```
+cd LMNOPproject
+python manage.py runserver
+
+```
 
 ### deploy
 
