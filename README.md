@@ -1,6 +1,14 @@
 ## LMNOP
 
-Assumes postgres installed and running.
+Assumes postgres installed and running. Also your project is using Git
+
+### Create Heroku project
+
+From root directory of your project, 
+
+```
+heroku create
+```
 
 ### Create Procfile
 
@@ -8,9 +16,13 @@ Put command to run wsgi.py in it
 
 ### Add dependencies 
 
-pip install whitenoise, gunicorn, dj-database-url, update requirements.txt
+```
+pip install whitenoise gunicorn dj-database-url
+```
 
-(note updated psycopg2) 
+update requirements.txt
+
+(note that psycopg2 version has been updated) 
 
 ### renaming 
 
@@ -24,9 +36,9 @@ create runtime.txt file with python version in
 
 Heroku expects to run things from the root dir of project. We've been running things from the LMNOPsite directory, so have to adjust where things are relative to the root.
 
-### config vars, set in dashboard
+### config vars, set in dashboard and locally
 
-POSTGRES_LMNOP_USER_PASSWORD= whatever your password is
+POSTGRES_LMNOP_USER_PASSWORD=whatever your password is
 
 Postgres database seems to be created for you. If not `heroku addons:create heroku-postgresql:dev`
 
@@ -72,9 +84,6 @@ Disabling collect static and deploying in the current configuration seems to wor
 
 ```heroku config:set DISABLE_COLLECTSTATIC=1```
 
-### Create heroku app
-
-```heroku create```
 
 ### run locally
 
